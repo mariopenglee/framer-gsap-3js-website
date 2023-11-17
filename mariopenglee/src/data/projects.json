@@ -1,0 +1,17 @@
+[
+    {
+      "title": "Project 1",
+      "description": "This is a project",
+      "imageURL": "https://placehold.co/400"
+    },
+    {
+      "title": "Project 2",
+      "description": "This is another project",
+      "imageURL": "https://placehold.co/400"
+    },
+    {
+      "title": "Project 3",
+      "description": "This is a third project",
+      "imageURL": "https://placehold.co/400"
+    }
+]

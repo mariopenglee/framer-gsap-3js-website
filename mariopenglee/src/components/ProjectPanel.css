@@ -1,0 +1,12 @@
+/* ProjectDetailPanel.css */
+.project-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white; /* Or any other color */
+    z-index: 100; /* To ensure it's above all other content */
+    /* Add more styles as needed */
+  }
+  
