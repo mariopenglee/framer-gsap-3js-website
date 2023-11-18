@@ -1,12 +1,8 @@
 import React, { useEffect, useLayoutEffect } from "react";
 import "./Interests.css";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
-// Initialize ScrollTrigger
-gsap.registerPlugin(ScrollTrigger);
 
 function Interests() {
 

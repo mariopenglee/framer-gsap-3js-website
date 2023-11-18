@@ -12,40 +12,46 @@ function Story() {
   const { scrollYProgress } = useScroll();
 
   useLayoutEffect(() => {
-    
-    
-
-    gsap.to(".intro", {
-      scrollTrigger: {
-        trigger: ".intro",
-        start: "top 80%",
-        end: "bottom bottom",
-        scrub: 1,
+    gsap.fromTo(
+      ".intro",
+      {
+        opacity: 0,
+        y: 100,
       },
-      opacity: 1,
-      x: -20,
-    });
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.5,
+        scrollTrigger: {
+          trigger: ".intro",
+          start: "top 80%",
+          end: "top 20%",
+          scrub: true,
+        },
+      }
+    );
 
-    // show all the paragraphs in the fall2023 section one by one
-    gsap.to(".fall2023 p", {
-      scrollTrigger: {
-        trigger: ".fall2023",
-        start: "top 80%",
-        end: "bottom bottom",
-        scrub: 1,
-        toggleActions: 'play none none reverse',
+    gsap.fromTo(
+      ".fall2023",
+      {
+        opacity: 0,
+        y: 100,
       },
-      opacity: 1,
-      x: -20,
-      stagger: 0.2,
-    });
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.5,
+        scrollTrigger: {
+          trigger: ".fall2023",
+          start: "top 80%",
+          end: "top 20%",
+          scrub: true,
+        },
+      }
+    );
 
-    
-
-      
-    
-
-    
   }, []);
 
   return (

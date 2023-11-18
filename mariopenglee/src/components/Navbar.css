@@ -1,7 +1,7 @@
 .navbar {
     position: fixed;
     /* put in the center right */
-	top: calc(50% - 2.5em);
+	bottom: 0;
 	right: 0;
 
     background-color: transparent;
@@ -9,7 +9,6 @@
     z-index: 2000; /* Ensure it's above other content */
     transition: all 0.5s;
   }
-
 .navbar-container {
 	display: flex;
 	justify-content: center;
@@ -42,3 +41,6 @@
 	color: #ff0000;
 }
 
+.fill {
+	
+}

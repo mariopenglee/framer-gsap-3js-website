@@ -4,11 +4,13 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import Home from '../pages/Home';
 import About from '../pages/About';
 import './Landing.css';
-import { motion } from 'framer-motion';
+import {  animate, motion } from 'framer-motion';
 
 gsap.registerPlugin(ScrollToPlugin);
 
 function Landing() {
+
+
   const [isTop, setIsTop] = useState(true);
   
   const arrowRef = useRef(null);
@@ -24,11 +26,11 @@ function Landing() {
 
       // Animate the arrow
       if (!atTop) {
-        gsap.to(arrowRef.current, { duration: 1, scale: 1.5, opacity: 0, y: -100, ease: 'power3.out' });
+        gsap.to(arrowRef.current, { duration: 0.5, scale: 1.5, opacity: 0, y: -50, ease: 'power3.out' });
 
 
       } else {
-        gsap.to(arrowRef.current, { duration: 1, scale: 1, opacity: 1, y: 0, ease: 'power3.out' });
+        gsap.to(arrowRef.current, { duration: 0.5, scale: 1, opacity: 1, y: 0, ease: 'power3.out' });
        
       }
     };
@@ -42,12 +44,17 @@ function Landing() {
       <div className="App">
         <main>
           <Home />
-            <div className="scroll-arrow" onClick={scrollToAbout} ref={arrowRef}>
+            <motion.div 
+              className="scroll-arrow" 
+              onClick={scrollToAbout} 
+              ref={arrowRef}
+              >
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               
                 <path d="M4 9L12 1L20 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-            </div>
+            </motion.div>
+
           <About />
         </main>
         <footer>{/* Footer content here */}</footer>

@@ -1,12 +1,65 @@
-/* ProjectDetailPanel.css */
 .project-panel {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: white; /* Or any other color */
-    z-index: 100; /* To ensure it's above all other content */
-    /* Add more styles as needed */
-  }
-  
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 50%);
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-color: rgba(0, 0, 0, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.project-panel-content {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: smaller;
+
+}
+
+
+.project-panel-image {
+  height: 30vh;
+  background-size: 100% auto;
+  object-fit: cover;
+
+}
+
+.project-panel-skill {
+  margin: 0 0.5em;
+  color: black;
+  background-color: white;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  text-align: center;
+  font-size: smaller;
+}
+
+
+
+.project-panel-close {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  color: white;
+
+}
+
+
+.project-panel-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+  gap: 1em;
+}

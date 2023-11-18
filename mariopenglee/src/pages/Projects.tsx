@@ -10,15 +10,8 @@ import ProjectPanel from "../components/ProjectPanel";
 
 function Projects() {
 
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [isPanelOpen, setIsPanelOpen] = useState(false);
-
-  const handleItemClick = (project) => {
-    console.log(project);
-    setSelectedProject(project);
-    setIsPanelOpen(true);
-  };
-
+  const [selectedId, setSelectedId] = useState(null);
+  console.log(selectedId);
   const pageVariants = {
     initial: {
       x: "100vw",
@@ -65,26 +58,27 @@ function Projects() {
     transition={pageTransition}
     >
       <section id="projects">
-        <h1>Projects</h1>
+        <h2>Projects</h2>
         <Ticker duration={20}>
-        {projects.map((project, index) => (
-          <TickerItem 
-            key={index} 
-            title={project.title} 
-            description={project.description} 
-            imageURL={project.imageURL}
-            onClick={() => handleItemClick(project)}
+        {projects.map((project) => (
+        <div key={project.id.toString()}>
+            <TickerItem 
+                project={project} 
+                key={project.id.toString()}
+                setSelectedId={setSelectedId}
+                selectedId={selectedId}
             />
-        ))}
-      </Ticker>
+        </div>
+    ))}
+        </Ticker>
       </section>
-      <AnimatePresence>
-      {isPanelOpen && (
-        <ProjectPanel 
-          project={selectedProject} 
-          onClose={() => setIsPanelOpen(false)}
-        />
-      )}
+      <AnimatePresence mode= "wait">
+        {selectedId && (
+          <ProjectPanel
+            projectId={selectedId}
+            onClose={() => setSelectedId(null)}
+          />
+        )}
       </AnimatePresence>
     </motion.div>
   );

@@ -7,7 +7,7 @@
     padding: 0em;
     padding-top: 30vh;
     text-align: left;
-    width: 97vw;
+    width: 100vw;
     height: 100%;
 
   }
@@ -28,12 +28,10 @@
     align-items: flex-start;
     justify-content: flex-start;
     text-align: left;
-    opacity: 0;
 
   }
   
   .fall2023 p{
-    opacity: 0;
     text-align: left;
     color: white;
     transition: all 0.5s;
@@ -51,4 +49,5 @@
   height: 1vw;
   background: white;
   transform-origin: 0%;
+  border-bottom-right-radius: 50%;
 }
