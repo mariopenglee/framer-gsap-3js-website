@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -6,10 +6,13 @@ import Landing from './screens/Landing';
 import Projects from './pages/Projects';
 import Interests from './pages/Interests';
 import CustomCursor from './components/CustomCursor';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+
 import './index.css';
 
 const App = () => {
+  const constraintsRef = useRef(null)
+
   const location = useLocation(); // Get the current location
 
 

@@ -1,6 +1,6 @@
 import React from "react";
 import './TickerItem.css';
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 
 export default function TickerItem({ project, setSelectedId, selectedId }) {
     const isSelected = selectedId === project.id;
@@ -11,6 +11,7 @@ export default function TickerItem({ project, setSelectedId, selectedId }) {
     };
 
     return (
+        
         <motion.div
             className="ticker-item"
             key={project.id}
@@ -25,6 +26,7 @@ export default function TickerItem({ project, setSelectedId, selectedId }) {
                     <motion.div
                         className="fill"
                         key={project.id}
+                        layoutId={project.id}
                         variants={fillVariants}
                         initial="initialF"
                         animate="animateF"
@@ -33,7 +35,7 @@ export default function TickerItem({ project, setSelectedId, selectedId }) {
                     />
                 )}
             </AnimatePresence>
-            <span className="ticker-item-content">{project.title}</span>
+            <p className="ticker-item-content"><b>{project.title}</b></p>
         </motion.div>
     );
 }

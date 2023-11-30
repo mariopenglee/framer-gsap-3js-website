@@ -18,29 +18,25 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: rgba(255, 255, 255, 0.05);
+	background: black;
 	box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
-	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-	border-top: 1px solid rgba(255, 255, 255, 0.1);
+
 	padding: 10px;
 	letter-spacing: 1px;
 	text-decoration: none;
 	z-index: 1;
 	transition: 0.5s;
-	backdrop-filter: blur(15px);
 	
 }
 
 .navbar-item a {
 	text-decoration: none;
-	color: gray;
+	color: white;
 	transition: all 0.5s;
 }
 
 .navbar-item a:hover {
-	color: #ff0000;
+	color: white;
 }
 
-.fill {
-	
-}
+

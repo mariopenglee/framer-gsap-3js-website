@@ -14,6 +14,9 @@ const Navbar = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           whileHover={{ scale: 1.1 }}
+          drag
+          dragConstraints = {{ left: -200, right: 0, top: -200, bottom: 0 }}
+          
           >
             <motion.div
               className="navbar-item"

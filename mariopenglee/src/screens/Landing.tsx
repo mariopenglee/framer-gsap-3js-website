@@ -10,7 +10,6 @@ gsap.registerPlugin(ScrollToPlugin);
 
 function Landing() {
 
-
   const [isTop, setIsTop] = useState(true);
   
   const arrowRef = useRef(null);
@@ -51,7 +50,7 @@ function Landing() {
               >
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               
-                <path d="M4 9L12 1L20 9" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 9L12 1L20 9" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </motion.div>
 

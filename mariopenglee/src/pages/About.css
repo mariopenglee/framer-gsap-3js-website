@@ -12,13 +12,6 @@
 
   }
 
-  b{
-    color: #fff;
-    text-shadow:
-        0 0 7px #fff,
-        0 0 42px #0fa;
-
-  }
 
 
 
@@ -30,12 +23,9 @@
     text-align: left;
 
   }
-  
   .fall2023 p{
     text-align: left;
     color: white;
-    transition: all 0.5s;
-    transform: translateX(20px);
   }
 
 

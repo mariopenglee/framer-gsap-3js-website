@@ -3,18 +3,20 @@ import React from "react";
 import "./ProjectPanel.css"; // Ensure this CSS file is created for styling
 import { motion } from "framer-motion";
 import projects from "../data/projects.json";
+import otherprojects from "../data/other_projects.json";
 import Ticker from "framer-motion-ticker";
 
 
-export default function ProjectPanel({ projectId, onClose }) {
-  const project = projects.find(p => p.id === projectId); // Assuming each project has a unique `id`
+export default function ProjectPanel({ projectId, onClose, otherProject }) {
+  const project = otherProject ? otherprojects.find((project) => project.id === projectId) : projects.find((project) => project.id === projectId);
     // If no project is selected, don't render the component
     if (!project) return null;
 
     const panelVariants = {
         initial: {
-            x: "100vw",
-            y: "100vh",
+            width: "50%",
+            height: "50%",
+            opacity: 0,
             transition: {
                 duration: 1,
                 type: "spring",
@@ -22,8 +24,9 @@ export default function ProjectPanel({ projectId, onClose }) {
             }
         },
         animate: {
-            x: "-50vw",
-            y: "-50vh",
+            width: "100%",
+            height: "100%",
+            opacity: 1,
             transition: {
                 duration: 1,
                 type: "spring",
@@ -37,6 +40,7 @@ export default function ProjectPanel({ projectId, onClose }) {
                   className="project-panel"
                   key = {projectId}
                   variants={panelVariants}
+                  layoutId= {projectId}
                   initial="initial"
                   animate="animate"
                   exit="initial"
@@ -64,9 +68,16 @@ export default function ProjectPanel({ projectId, onClose }) {
                       <div className="project-panel-links">
                         {project.links &&
                           project.links.map((link, index) => (
-                            <motion.button className="project-panel-button" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => window.open(link.link, "_blank")} key={index}>
-                              {link.name}
-                            </motion.button>
+                          
+                              link.link === "n/a" ?
+                              <motion.button className="project-panel-button" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} key={index} disabled>
+                                {link.name}
+                              </motion.button>
+                              :
+                              <motion.button className="project-panel-button" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => window.open(link.link, "_blank")} key={index}>
+                                {link.name}
+                              </motion.button>
+                          
                           ))}
                       </div>
 

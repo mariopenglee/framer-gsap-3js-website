@@ -11,7 +11,8 @@ gsap.registerPlugin(ScrollTrigger);
 function Story() {
   const { scrollYProgress } = useScroll();
 
-  useLayoutEffect(() => {
+   useLayoutEffect(() => {
+ 
     gsap.fromTo(
       ".intro",
       {
@@ -32,24 +33,28 @@ function Story() {
       }
     );
 
-    gsap.fromTo(
-      ".fall2023",
-      {
-        opacity: 0,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        stagger: 0.5,
-        scrollTrigger: {
-          trigger: ".fall2023",
-          start: "top 80%",
-          end: "top 20%",
-          scrub: true,
+   gsap.utils.toArray(".fall2023 p").forEach((section, index) => {
+      gsap.fromTo(
+        section,
+        {
+          opacity: 0,
+          x: 100,
         },
-      }
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          stagger: 0.5,
+          scrollTrigger: {
+            trigger: section,
+            start: "top bottom",
+            end: "bottom bottom",
+            markers: true,
+            scrub: true,
+          },
+        }
+      );
+    }
     );
 
   }, []);
@@ -63,14 +68,14 @@ function Story() {
       <div className = "intro">
         
         <h2>about me</h2>
-        <p>
+        <p className = "intro-item">
           I'm an undergrad at UCLA. <br/>
           - B.S. in Linguistics & Computer Science,  <br/>
           - B.S. in Psychology,  <br/>
           - Minor in Data Science.
         </p>
       </div>
-      <p>
+      <p className = "intro-item">
           I believe that technology should be <b>accessible</b>, <b>inclusive</b>, and <b>impactful</b>. <br/>
           That's why I want to research <b>Human-Centered Artificial Intelligence</b>. <br/>
       </p>

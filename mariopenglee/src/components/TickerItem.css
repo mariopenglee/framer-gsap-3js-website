@@ -6,7 +6,6 @@
     padding: 20px;
     background-size: cover;
     background-position: center;
-    border-radius: 10px;
     margin: 10px;
     overflow: hidden;
     color: black;
@@ -24,13 +23,11 @@
     left: 0;
     background-size: cover;
     background-position: center;
-    filter: blur(3px);
+    opacity: 50%;
     z-index: -1;
 }
 
 .ticker-item-content {
-    color: black;
-    background-color: white;
     padding: 0 6px;
     margin: 0;
     z-index: -1;
