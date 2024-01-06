@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect } from "react";
-import "./Interests.css";
+import "./Contact.css";
 import { gsap } from "gsap";
 import { motion } from "framer-motion";
 
@@ -62,12 +62,7 @@ function Interests() {
     >
     <section id="interests">
         <p>
-          In my freetime, I'm a <a href="./music">musician</a>, <a href="./photography">photographer</a>
-          , and <a href="./gamedev">game designer</a>.
-        </p>
-
-        <p>
-          For fun, I like MMA, cooking, surfing, bodybuilding, skateboarding, cardistry, and many other things. I'm always eager to try new things, and expand my horizons.
+          Coming soon!
         </p>
      
 

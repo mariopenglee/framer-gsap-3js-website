@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-three/drei": "^9.86.3",
     "@react-three/fiber": "^8.14.4",
+    "@react-three/postprocessing": "^2.15.11",
     "@splinetool/loader": "^0.9.469",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^0.9.469",

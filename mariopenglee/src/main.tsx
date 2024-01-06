@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Landing from './screens/Landing';
 import Projects from './pages/Projects';
-import Interests from './pages/Interests';
+import Contact from './pages/Contact';
 import CustomCursor from './components/CustomCursor';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -25,7 +25,7 @@ const App = () => {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Landing />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/interests" element={<Interests />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </AnimatePresence>
     </>

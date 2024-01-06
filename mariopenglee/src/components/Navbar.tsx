@@ -12,11 +12,7 @@ const Navbar = () => {
           className="navbar-container"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
           whileHover={{ scale: 1.1 }}
-          drag
-          dragConstraints = {{ left: -200, right: 0, top: -200, bottom: 0 }}
-          
           >
             <motion.div
               className="navbar-item"
@@ -36,7 +32,7 @@ const Navbar = () => {
               className="navbar-item"
               whileTap={{ scale: 1.2}}
               >
-            <Link to="/interests">Interests</Link>
+            <Link to="/contact">Contact</Link>
             </motion.div>
           </motion.div>
         </nav>

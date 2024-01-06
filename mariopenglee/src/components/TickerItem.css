@@ -1,49 +1,16 @@
 .ticker-item {
-    position: relative; 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 20px;
-    background-size: cover;
-    background-position: center;
-    margin: 10px;
-    overflow: hidden;
-    color: black;
-    will-change: transform;
-    width: 30vw;
-    height: 20vh;
-    transition: all 0.5s;
+  padding-left: 1em;
+  text-align: left;
+  width: fit-content;
+  opacity: 0.5;
+
   }
 
-  .background-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-size: cover;
-    background-position: center;
-    opacity: 50%;
-    z-index: -1;
-}
 
-.ticker-item-content {
-    padding: 0 6px;
-    margin: 0;
-    z-index: -1;
-}
   
-  
-  .ticker-item:hover {
-    transform: scale(1.05);
-  }
 
-  .fill {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    background-color: black;
-    overflow: hidden;
-    z-index: 2;
-   }
+.ticker-item:hover {
+  opacity: 1;
+  font-size: 1.5em;
+  
+}

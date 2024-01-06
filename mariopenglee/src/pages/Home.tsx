@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLayoutEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { EffectComposer, Pixelation, ChromaticAberration } from '@react-three/postprocessing'
 
 // Initialize ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -94,7 +95,15 @@ function Home() {
         <section id="home" ref={sectionRef}>
           <div className="mix-blend animatable">
             <div className="myname animatable"><h1>MARIO PENG LEE</h1></div>
-            <Canvas className="canvas animatable">
+            <Canvas 
+            className="canvas animatable"
+            gl={{ antialias: false }}
+            dpr={[1, 2]}
+            >
+              <EffectComposer>
+                <Pixelation granularity={5}/>
+                <ChromaticAberration offset={[0.01, 0.01]} />
+              </EffectComposer>
               <ambientLight />
               <pointLight position={[10, 10, 10]} />
               <InteractiveSquare />

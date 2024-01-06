@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import "./Projects.css";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import Ticker from 'framer-motion-ticker';
 import TickerItem from "../components/TickerItem";
 import projects from "../data/projects.json";
 import otherprojects from "../data/other_projects.json";
 import ProjectPanel from "../components/ProjectPanel";
-
+import { gsap } from "gsap";
 
 
 function Projects() {
 
-  const [selectedId, setSelectedId] = useState(null);
+  const [selectedId, setSelectedId] = useState(1);
   console.log(selectedId);
   const pageVariants = {
     initial: {
@@ -48,6 +48,28 @@ function Projects() {
     duration: 1
   };
 
+  useLayoutEffect(() => {
+    const elements = document.querySelectorAll('.animatable');
+
+
+    gsap.fromTo(elements, {
+      autoAlpha: 0,
+      y: 50,
+    }, {
+      autoAlpha: 1,
+      y: 0,
+      stagger: 0.1,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".titles",
+        start: "top 80%",
+        end: "bottom 80%",
+        // markers: true
+      }
+    });
+  }, []);
+
 
   
   return (
@@ -60,8 +82,9 @@ function Projects() {
     transition={pageTransition}
     >
       <section id="projects">
-        <h3>Research Projects</h3>
-        <Ticker duration={20}>
+        <div className="titles">
+        <p>Selected Projects</p>
+        <div>
         {projects.map((project) => (
         <div key={project.id.toString()}>
             <TickerItem 
@@ -72,9 +95,9 @@ function Projects() {
             />
         </div>
     ))}
-        </Ticker>
-        <h3>Game Dev</h3>
-        <Ticker duration={15}>
+        </div>
+        <p>Game Dev</p>
+        <div>
         {otherprojects.map((project) => (
         <div key={project.id.toString()}>
             <TickerItem 
@@ -85,17 +108,15 @@ function Projects() {
             />
         </div>
     ))}
-    </Ticker>
-      </section>
-      <AnimatePresence mode= "wait">
-        {selectedId && (
+      </div>
+      </div>
           <ProjectPanel
-            projectId={selectedId}
-            onClose={() => setSelectedId(null)}
-            otherProject={selectedId > 10}
+              projectId={selectedId}
+              onClose={() => setSelectedId(null)}
+              otherProject={selectedId > 10}
           />
-        )}
-      </AnimatePresence>
+      </section>
+      
     </motion.div>
   );
 }

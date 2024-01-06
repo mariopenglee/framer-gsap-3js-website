@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 :root {
-  font-family: 'Share Tech', monospace;
+  /*font-family: 'Share Tech', monospace;*/
+  font-family: 'VT323', monospace;
   line-height: 1.5;
   font-weight: 400;
   font-size: max(2vw, 20px);
@@ -47,7 +48,22 @@ html, body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 12vw;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 6vw;
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: 4vw;
+  line-height: 1.1;
+}
+
+h4 {
+  font-size: 3vw;
   line-height: 1.1;
 }
 
@@ -55,7 +71,6 @@ button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;

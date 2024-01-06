@@ -1,7 +1,7 @@
 // ProjectDetailPanel.tsx
 import React from "react";
 import "./ProjectPanel.css"; // Ensure this CSS file is created for styling
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import projects from "../data/projects.json";
 import otherprojects from "../data/other_projects.json";
 import Ticker from "framer-motion-ticker";
@@ -12,59 +12,37 @@ export default function ProjectPanel({ projectId, onClose, otherProject }) {
     // If no project is selected, don't render the component
     if (!project) return null;
 
-    const panelVariants = {
-        initial: {
-            width: "50%",
-            height: "50%",
-            opacity: 0,
-            transition: {
-                duration: 1,
-                type: "spring",
-                stiffness: 40
-            }
-        },
-        animate: {
-            width: "100%",
-            height: "100%",
-            opacity: 1,
-            transition: {
-                duration: 1,
-                type: "spring",
-                stiffness: 40
-            }
-        }
-    };
+
+
+
+    
 
     return (
-              <motion.div
-                  className="project-panel"
-                  key = {projectId}
-                  variants={panelVariants}
-                  layoutId= {projectId}
-                  initial="initial"
-                  animate="animate"
-                  exit="initial"
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-              >
-             
-                  
-                    <div className="project-panel-content">
-                      
-                        <img className="project-panel-image" src={project.image} alt={project.title} /> 
-                
-                          <h3>{project.title}</h3>
-                          <p>{project.description}</p>
+              <AnimatePresence mode="wait">
+              { project && (<motion.div
+                    className="project-panel animatable"
+                    key={projectId}
 
-                      {
-                        project.skills &&
-                          (<Ticker duration={10}>
-                            {project.skills.map((skill, index) => (
-                              <div className="project-panel-skill" key={index}>
-                                {skill}
-                              </div>
-                            ))}
-                          </Ticker>)
-                      }
+                >
+                      
+                        <img 
+                        className="project-panel-image" 
+                        src={project.image} 
+                        alt={project.title}
+
+
+                         /> 
+                      <div className="project-panel-content">
+                          <h3
+                          style={
+                            {
+                              padding: "0 0 0 0",
+                              margin: "0 0 0 0"
+                            }
+                          }
+                          
+                          >{project.title}</h3>
+
                       <div className="project-panel-links">
                         {project.links &&
                           project.links.map((link, index) => (
@@ -81,13 +59,24 @@ export default function ProjectPanel({ projectId, onClose, otherProject }) {
                           ))}
                       </div>
 
-                      <motion.button onClick={onClose} className="project-panel-close">
-                        X
-                      </motion.button>
+                          <p>{project.description}</p>
+
+                      
+                      {
+                        project.skills &&
+                          (<>
+                            {project.skills.map((skill, index) => (
+                              <div className="project-panel-skill" key={index}>
+                                {skill}
+                              </div>
+                            ))}
+                          </>)
+                      }
                     </div>
                   
                   
-              </motion.div>
+              </motion.div>)}
+              </AnimatePresence>
   );
 
 };

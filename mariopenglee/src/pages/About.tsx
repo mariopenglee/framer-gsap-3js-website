@@ -12,50 +12,26 @@ function Story() {
   const { scrollYProgress } = useScroll();
 
    useLayoutEffect(() => {
- 
-    gsap.fromTo(
-      ".intro",
-      {
-        opacity: 0,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        stagger: 0.5,
-        scrollTrigger: {
-          trigger: ".intro",
-          start: "top 80%",
-          end: "top 20%",
-          scrub: true,
-        },
-      }
-    );
+    
+    gsap.utils.toArray(".statement-item").forEach((item) => {
+      ScrollTrigger.create({
+        trigger: item,
+        start: "top 50%",
+        end: "bottom 50%",
+        onEnter: () => gsap.to(item, { opacity: 1 }),
+        onLeave: () => gsap.to(item, { opacity: 0.2 }),
+        onEnterBack: () => gsap.to(item, { opacity: 1 }),
+        onLeaveBack: () => gsap.to(item, { opacity: 0.2 }),
+        markers: false,
+        scrub: true,
+      });
+    });
 
-   gsap.utils.toArray(".fall2023 p").forEach((section, index) => {
-      gsap.fromTo(
-        section,
-        {
-          opacity: 0,
-          x: 100,
-        },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1,
-          stagger: 0.5,
-          scrollTrigger: {
-            trigger: section,
-            start: "top bottom",
-            end: "bottom bottom",
-            markers: true,
-            scrub: true,
-          },
-        }
-      );
-    }
-    );
+    
+
+    
+
+   
 
   }, []);
 
@@ -65,55 +41,33 @@ function Story() {
       className="progress-bar"
       style={{ scaleX: scrollYProgress }}
       />
-      <div className = "intro">
-        
-        <h2>about me</h2>
-        <p className = "intro-item">
-          I'm an undergrad at UCLA. <br/>
-          - B.S. in Linguistics & Computer Science,  <br/>
-          - B.S. in Psychology,  <br/>
-          - Minor in Data Science.
-        </p>
-      </div>
-      <p className = "intro-item">
-          I believe that technology should be <b>accessible</b>, <b>inclusive</b>, and <b>impactful</b>. <br/>
-          That's why I want to research <b>Human-Centered Artificial Intelligence</b>. <br/>
-      </p>
+      <div className = "statement">
+        <div className="statement-title">
+          <div className="statement-title-text">
+            My Story
+          </div>
+        </div>
+        <div className = "statement-list">
+          <div className = "statement-item" 
+            style={{ marginLeft: 0 }}
+          >
+          My name is <b>Mario</b> Peng Lee. I'm about to obtain my bachelor's degree in Linguistics & Computer Science, Psychology, and Data Science at UCLA. 
+          </div>
+          <div className = "statement-item">
+            During this time, I've spent time as both a researcher and a software developer. 
+          </div>
+          <div className = "statement-item">
+            Throughout this journey, I've acquired a passion for language, cognition, culture, and artificial intelligence. 
+          </div>
+          <div className = "statement-item">
+            Now, I'm stepping into graduate school to expand my knowledge and pursue my research interests. 
+          </div>
+          <div className = "statement-item">
+          I aim to create technology that is accessible, inclusive, understandable, and safe. 
+          </div>
+        </div>
+    </div>
 
-      <div className="fall2023">
-        <h2>What I'm doing right now (Fall 2023)</h2>
-        <p>
-          At the <b> Computational Vision & Learning Lab - Supervised by Hongjing Lu,</b> <br/>
-          I'm conducting in-depth analysis of the diffusion model's latent space and cross-attention maps to answer questions about their understanding of relational reasoning and spatial reasoning. <br/>
-        </p>
-        <p>
-          At the <b> Language & Cognitive Development Lab - Supervised by Catherine Sandhofer,</b> <br/>
-          I'm conducting studies on how children learn antonyms and how adults learn new spatial terms. <br/>
-          Additionally, I'm using RoBERTa to model children's causal reasoning. <br/>
-        </p>
-        <p>
-          At the <b> Language Acquisition Lab - Supervised by Megha Sundara,</b> <br/>
-          I'm conducting multilingual studies on how children learn inflexions and vowel harmony in their native language. <br/>
-        </p>
-        <p>
-          Through the Undergraduate Research Scholars Program,  <br/>
-          I'm conducting a research project on second language acquisition and the role of metalearning and metacognition in language learning. <br/>
-        </p>
-        <p> 
-          I'm running the AI Safety club at UCLA, a club dedicated to researching AI Safety. Within the club, I'm also leading the AI Safety Reading Group and the Alignment Research Team. <br/>
-        </p>
-        <p> 
-          I'm also a Senior Editor at the Undergraduate Research Journal of Psychology at UCLA.
-        </p>
-        <p>
-          Additionally, I'm a Software Developer for LA Blueprint, currently working on a web app for Global Green, an environmental non-profit.
-        </p>
-        
-        <p>
-          Finally, I'm founding Pocket Menu, a mobile app solution for restaurants in Argentina.
-        </p>
-
-      </div>
       
       
     </section>
