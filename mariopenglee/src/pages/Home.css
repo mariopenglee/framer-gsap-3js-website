@@ -41,14 +41,16 @@
             justify-content: center;
             margin: 2em;
 
-            h1 {
-                margin: 0px;
-            }
             
 
             
             }
     }
+
+
+  .myname h1 {
+    margin: 0px;
+  }
     
   
    
@@ -63,13 +65,14 @@
                 align-items: center;
                 justify-content: center;
                 text-align: center;
-              h1 {
-                font-size: 2em;
-              }
+              
               }
       }
       
     
      
+    }
+    .myname h1 {
+      font-size: 2em;
     }
   }

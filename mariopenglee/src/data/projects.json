@@ -4,7 +4,7 @@
       "title": "The Diverse Names Generator",
       "description": "User-contributed, linguist curated database and software for generating diverse names to reduce bias in data. Paper published at the LSA 2023.",
       "skills": ["Full-Stack", "Mobile", "Web Dev", "React", "Firebase", "Unity", "Praat"],
-      "image": "src/data/project-images/1.png",
+      "image": "/project-images/1.png",
       "links":
         [
           {
@@ -21,7 +21,7 @@
       "id": 2,
       "title": "PhoneTic5",
       "description": "Transfer Learning for Grapheme to Phoneme Conversion, published at the Undergraduate Science Journal Vol. 36.",
-      "image": "src/data/project-images/2.png",
+      "image": "/project-images/2.png",
       "skills": ["Transformers", "Pytorch", "Data Augmentation", "LoRA", "Wug Test", "Neural Machine Translation"],
       "links": 
         [
@@ -39,7 +39,7 @@
       "id": 3,
       "title": "Multitask Training Evaluation",
       "description": "A multitask training experiment that evaluates parameter sharing on a recommender system using Matrix Factorization and Neural Collaborative Filtering algorithms.",
-      "image": "src/data/project-images/3.png",
+      "image": "/project-images/3.png",
       "skills": ["Pytorch", "Recommender Systems", "Matrix Factorization", "Neural Collaborative Filtering", "Multitask Learning"],
       "links":
         [
@@ -53,7 +53,7 @@
       "id": 4,
       "title": "Proxy Herd w asyncio",
       "description": "A research report exploring the tradeoffs between asynchronous programming and multithreading for a proxy herd.",
-      "image": "src/data/project-images/4.png",
+      "image": "/project-images/4.png",
       "skills": ["Python", "Asyncio", "Multithreading", "Proxy Herd", "Concurrency", "Java", "Node.js", "Programming Languages"],
       "links":
         [
