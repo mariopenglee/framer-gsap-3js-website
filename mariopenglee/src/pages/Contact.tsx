@@ -1,8 +1,8 @@
 
 import "./Contact.css";
-import { useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect } from 'react';
 import { motion } from 'framer-motion';
-import { EffectComposer, Pixelation, ChromaticAberration } from '@react-three/postprocessing'
+import { EffectComposer, Pixelation } from '@react-three/postprocessing'
 import { Canvas } from '@react-three/fiber';
 import BackgroundModel from '../components/ContactBackground';
 

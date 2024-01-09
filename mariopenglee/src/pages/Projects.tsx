@@ -1,6 +1,6 @@
 import { useLayoutEffect, useState } from "react";
 import "./Projects.css";
-import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
+import { motion } from "framer-motion";
 import TickerItem from "../components/TickerItem";
 import projects from "../data/projects.json";
 import otherprojects from "../data/other_projects.json";
@@ -90,7 +90,6 @@ function Projects() {
                 project={project} 
                 key={project.id.toString()}
                 setSelectedId={setSelectedId}
-                selectedId={selectedId}
             />
         </div>
     ))}
@@ -103,7 +102,6 @@ function Projects() {
                 project={project} 
                 key={project.id.toString()}
                 setSelectedId={setSelectedId}
-                selectedId={selectedId}
             />
         </div>
     ))}
@@ -111,7 +109,6 @@ function Projects() {
       </div>
           <ProjectPanel
               projectId={selectedId}
-              onClose={() => setSelectedId(null)}
               otherProject={selectedId > 10}
           />
       </section>

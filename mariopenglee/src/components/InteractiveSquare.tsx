@@ -1,10 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Mesh } from 'three';
 
 
 const InteractiveSquare: React.FC = () => {
-  const mesh = useRef<Mesh>();
+  const mesh = useRef<any>();
   const [scrollY, setScrollY] = useState(0);
 
   let increasing = true;

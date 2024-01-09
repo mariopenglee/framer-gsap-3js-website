@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -11,27 +11,13 @@ import { AnimatePresence } from 'framer-motion';
 import './index.css';
 
 const App = () => {
-  const [viewMode, setViewMode] = useState("light");
-
-  function ToggleViewMode () {
-    if (viewMode == "light")
-    {
-      console.log("switched to Dark Mode!");
-      setViewMode("dark");
-    }
-    else {
-      console.log("switched to Light Mode!");
-      setViewMode("light");
-    }
-    
-  };
   const location = useLocation(); // Get the current location
 
 
   
   return (
     <>
-      <Navbar ToggleMode={ToggleViewMode} />
+      <Navbar />
       <CustomCursor />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
@@ -44,7 +30,10 @@ const App = () => {
   );
 };
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const rootElement = document.getElementById('root');
+if (!rootElement) throw new Error('Root element not found');
+const root = ReactDOM.createRoot(rootElement);
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>

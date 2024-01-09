@@ -4,8 +4,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import projects from "../data/projects.json";
 import otherprojects from "../data/other_projects.json";
 
+type ProjectPanelProps = {
+  projectId: number;
+  otherProject?: boolean;
+};
 
-export default function ProjectPanel({ projectId, onClose, otherProject }) {
+export default function ProjectPanel({ projectId, otherProject }: ProjectPanelProps) {
   const project = otherProject ? otherprojects.find((project) => project.id === projectId) : projects.find((project) => project.id === projectId);
     // If no project is selected, don't render the component
     if (!project) return null;

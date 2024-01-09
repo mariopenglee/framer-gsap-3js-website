@@ -14,14 +14,15 @@ function Story() {
    useLayoutEffect(() => {
     
     gsap.utils.toArray(".statement-item").forEach((item) => {
+      const element = item as HTMLElement;
       ScrollTrigger.create({
-        trigger: item,
+        trigger: element,
         start: "top 50%",
         end: "bottom 50%",
-        onEnter: () => gsap.to(item, { opacity: 1 }),
-        onLeave: () => gsap.to(item, { opacity: 0.2 }),
-        onEnterBack: () => gsap.to(item, { opacity: 1 }),
-        onLeaveBack: () => gsap.to(item, { opacity: 0.2 }),
+        onEnter: () => gsap.to(element, { opacity: 1 }),
+        onLeave: () => gsap.to(element, { opacity: 0.2 }),
+        onEnterBack: () => gsap.to(element, { opacity: 1 }),
+        onLeaveBack: () => gsap.to(element, { opacity: 0.2 }),
         markers: false,
         scrub: true,
       });

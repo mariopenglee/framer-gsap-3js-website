@@ -4,7 +4,7 @@ import './Navbar.css'; // Import your CSS
 import { motion } from 'framer-motion';
 
 
-export default function Navbar (ToggleMode) {
+export default function Navbar () {
 
 
 

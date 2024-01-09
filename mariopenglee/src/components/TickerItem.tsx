@@ -1,7 +1,15 @@
 
 import './TickerItem.css';
 import { motion } from "framer-motion";
-export default function TickerItem({ project, setSelectedId, selectedId }) {
+
+type TickerItemProps = {
+    project: {
+        id: number;
+        title: string;
+    };
+    setSelectedId: (id: number) => void;
+};
+export default function TickerItem({ project, setSelectedId }: TickerItemProps) {
     const hoverStyle = {
         scale: 1.1, // Scale up the component to 110% of its size
         transition: {

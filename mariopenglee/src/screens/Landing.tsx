@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import Home from '../pages/Home';
@@ -9,8 +9,6 @@ import {  motion } from 'framer-motion';
 gsap.registerPlugin(ScrollToPlugin);
 
 function Landing() {
-
-  const [isTop, setIsTop] = useState(true);
   
   const arrowRef = useRef(null);
 
@@ -21,7 +19,6 @@ function Landing() {
   useEffect(() => {
     const checkIfTop = () => {
       const atTop = window.scrollY === 0;
-      setIsTop(atTop);
 
       // Animate the arrow
       if (!atTop) {

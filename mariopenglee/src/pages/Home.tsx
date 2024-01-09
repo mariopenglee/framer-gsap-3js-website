@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLayoutEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { EffectComposer, Pixelation, ChromaticAberration } from '@react-three/postprocessing'
+import { Vector2 } from 'three';
 
 // Initialize ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -45,7 +46,7 @@ function Home() {
     ease: "anticipate",
     duration: 1
   };
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     // Target all components you want to animate
@@ -82,6 +83,8 @@ function Home() {
       animation.kill(); // Stop the animation and clear its related ScrollTrigger
     };
   }, []);
+  const offsetVector = new Vector2(0.01, 0.01);
+
 
   return (
     <motion.div
@@ -102,7 +105,11 @@ function Home() {
             >
               <EffectComposer>
                 <Pixelation granularity={5}/>
-                <ChromaticAberration offset={[0.01, 0.01]} />
+                <ChromaticAberration 
+                offset={offsetVector} 
+                radialModulation={true}
+                modulationOffset={0}
+                />
               </EffectComposer>
               <ambientLight />
               <pointLight position={[10, 10, 10]} />
