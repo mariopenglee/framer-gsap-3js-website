@@ -1,10 +1,13 @@
-import React, { useEffect, useLayoutEffect } from "react";
+
 import "./Contact.css";
-import { gsap } from "gsap";
-import { motion } from "framer-motion";
+import { useLayoutEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import { EffectComposer, Pixelation, ChromaticAberration } from '@react-three/postprocessing'
+import { Canvas } from '@react-three/fiber';
+import BackgroundModel from '../components/ContactBackground';
 
 
-function Interests() {
+function Contact() {
 
   const pageVariants = {
     initial: {
@@ -60,10 +63,52 @@ function Interests() {
     variants={pageVariants}
     transition={pageTransition}
     >
-    <section id="interests">
-        <p>
-          Coming soon!
-        </p>
+    <section id="contact">
+      
+
+        <div className="business-card">
+        <motion.button 
+        className="contact-button" 
+        whileHover={{ scale: 1.1 }} 
+        whileTap={{ scale: 0.9 }} 
+        onClick={() => window.open('https://www.linkedin.com/in/mariopenglee/', "_blank")}>
+                                {'linkedin'}
+        </motion.button>
+        <motion.button 
+        className="contact-button" 
+        whileHover={{ scale: 1.1 }} 
+        whileTap={{ scale: 0.9 }} 
+        onClick={() => window.open('https://github.com/mariopenglee', "_blank")}>
+                                {'github'}
+        </motion.button>
+        <motion.button 
+        className="contact-button" 
+        whileHover={{ scale: 1.1 }} 
+        whileTap={{ scale: 0.9 }} 
+        onClick={() => window.open('https://drive.google.com/file/d/1LVTITOHqUuJ5mO1W9ETH94bov9PoR3AU/view?usp=sharing', "_blank")}>
+                                {'resume'}
+        </motion.button>
+        <motion.button 
+        className="contact-button" 
+        whileHover={{ scale: 1.1 }} 
+        whileTap={{ scale: 0.9 }} 
+        onClick={() => window.open('mailto:mariopeng@ucla.edu', "_blank")}>
+                                {'mail'}
+        </motion.button>
+        </div>
+
+        <Canvas 
+            className="canvas animatable"
+            gl={{ antialias: false }}
+            dpr={[1, 2]}
+            >
+              <EffectComposer>
+                <Pixelation granularity={5}/>
+              </EffectComposer>
+              <ambientLight />
+              <pointLight position={[10, 10, 10]} />
+              <BackgroundModel />
+      </Canvas>
      
 
     </section>
@@ -71,4 +116,4 @@ function Interests() {
   );
 }
 
-export default Interests;
+export default Contact;

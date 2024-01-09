@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import { useLayoutEffect } from "react";
 import "./About.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -44,26 +44,26 @@ function Story() {
       <div className = "statement">
         <div className="statement-title">
           <div className="statement-title-text">
-            My Story
+            Hello there!
           </div>
         </div>
         <div className = "statement-list">
           <div className = "statement-item" 
             style={{ marginLeft: 0 }}
           >
-          My name is <b>Mario</b> Peng Lee. I'm about to obtain my bachelor's degree in Linguistics & Computer Science, Psychology, and Data Science at UCLA. 
+          My name is Mario. I'm a Taiwanese descendant, but my heart is in Argentina, where I grew up.
           </div>
           <div className = "statement-item">
-            During this time, I've spent time as both a researcher and a software developer. 
+          I've studied in 5 countries, and this June 2024 I'll be obtaining my bachelor's degrees in Linguistics & Computer Science, Psychology, and Data Science at UCLA. 
           </div>
           <div className = "statement-item">
-            Throughout this journey, I've acquired a passion for language, cognition, culture, and artificial intelligence. 
+          My academic path has been marked by an interdisciplinary approach, merging linguistics, psychology, and computer science to explore the intricate tapestry of human cognition. 
           </div>
           <div className = "statement-item">
-            Now, I'm stepping into graduate school to expand my knowledge and pursue my research interests. 
+            I've acquired a passion for language, cognition, culture, and artificial intelligence. And I wish to pursue graduate studies to expand my knowledge.
           </div>
           <div className = "statement-item">
-          I aim to create technology that is accessible, inclusive, understandable, and safe. 
+          I aim to create technology that is accessible, inclusive, understandable, and safe. Therefore I'm also juggling multiple initiatives and start-ups to make a positive impact in the world. 
           </div>
         </div>
     </div>

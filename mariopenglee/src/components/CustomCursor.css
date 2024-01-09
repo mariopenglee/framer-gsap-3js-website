@@ -17,3 +17,14 @@
     transform: translate(-50%, -50%) scale(1.5);
   }
   
+@media only screen and (max-width: 734px){
+  
+.cursor {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  width: 1em;
+  height: 1em;
+}
+
+}

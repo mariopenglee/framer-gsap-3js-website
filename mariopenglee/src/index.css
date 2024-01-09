@@ -30,12 +30,11 @@
 a {
   font-weight: 500;
   color: white;
-  text-shadow: 0 0 7px black;
   text-decoration: none;
 
 }
 a:hover {
-  color: cyan;
+  color: white;
 }
 
 html, body {
@@ -44,6 +43,7 @@ html, body {
   place-items: center;
   max-width: 100vw;
   width: 100%;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
@@ -68,17 +68,17 @@ h4 {
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
+  border-radius: 5px;
+  border: 1px solid white;
   padding: 0.6em 1.2em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: black;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+
 }
 button:focus,
 button:focus-visible {
@@ -86,54 +86,19 @@ button:focus-visible {
 }
 
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
 b{
   background-color: white;
   color: black;
 
 }
 
-@media (prefers-color-scheme: dark) {
+
+@media (max-width: 734px) {
   :root {
-    color: #ffffff;
-    background-color: #000000;
+    font-size: 3em;
   }
-  a:hover {
-    color: #646cff;
+  p {
+    font-size: 1em;
   }
-  button {
-    background-color: #1a1a1a;
-  }
-}
-
-
-* {
-  scrollbar-width: 0;
-}
-
-/* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 0;
-}
-
-*::-webkit-scrollbar-track {
-  background: orange;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: blue;
-  border-radius: 20px;
-  border: 3px solid orange;
+ 
 }

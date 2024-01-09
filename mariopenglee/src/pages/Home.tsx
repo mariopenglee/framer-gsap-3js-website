@@ -94,7 +94,7 @@ function Home() {
       <div className="home">
         <section id="home" ref={sectionRef}>
           <div className="mix-blend animatable">
-            <div className="myname animatable"><h1>MARIO PENG LEE</h1></div>
+            <div className="myname animatable"><h1>MARIO</h1> <h1>PENG LEE</h1></div>
             <Canvas 
             className="canvas animatable"
             gl={{ antialias: false }}

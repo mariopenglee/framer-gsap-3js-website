@@ -1,10 +1,12 @@
 // Navbar component
 import { Link } from 'react-router-dom';
 import './Navbar.css'; // Import your CSS
-import { MotionConfig, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 
-const Navbar = () => {
+export default function Navbar (ToggleMode) {
+
+
 
     return (
         <nav className="navbar">
@@ -38,5 +40,3 @@ const Navbar = () => {
         </nav>
     );
 };
-
-export default Navbar;

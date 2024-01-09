@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import Home from '../pages/Home';
 import About from '../pages/About';
 import './Landing.css';
-import {  animate, motion } from 'framer-motion';
+import {  motion } from 'framer-motion';
 
 gsap.registerPlugin(ScrollToPlugin);
 

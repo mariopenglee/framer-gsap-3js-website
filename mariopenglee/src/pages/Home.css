@@ -32,9 +32,18 @@
             
             position: absolute;
             text-align: left;
-            padding: 1em;
             z-index: -3;
             width: 50%;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            margin: 2em;
+
+            h1 {
+                margin: 0px;
+            }
             
 
             
@@ -45,3 +54,22 @@
    
   }
   
+  @media (max-width: 734px) {
+    #home {
+      .mix-blend {
+          
+            
+              .myname {
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+              h1 {
+                font-size: 2em;
+              }
+              }
+      }
+      
+    
+     
+    }
+  }

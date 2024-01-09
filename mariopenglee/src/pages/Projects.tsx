@@ -1,7 +1,6 @@
-import React, { useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import "./Projects.css";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
-import Ticker from 'framer-motion-ticker';
 import TickerItem from "../components/TickerItem";
 import projects from "../data/projects.json";
 import otherprojects from "../data/other_projects.json";
@@ -83,8 +82,8 @@ function Projects() {
     >
       <section id="projects">
         <div className="titles">
-        <p>Selected Projects</p>
-        <div>
+        <p className="project-category-title">Research</p>
+        <div className="ticker">
         {projects.map((project) => (
         <div key={project.id.toString()}>
             <TickerItem 
@@ -96,8 +95,8 @@ function Projects() {
         </div>
     ))}
         </div>
-        <p>Game Dev</p>
-        <div>
+        <p className="project-category-title">Game Dev</p>
+        <div className="ticker">
         {otherprojects.map((project) => (
         <div key={project.id.toString()}>
             <TickerItem 

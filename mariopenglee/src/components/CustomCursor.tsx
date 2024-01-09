@@ -1,5 +1,5 @@
 // CursorComponent.jsx
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import './CustomCursor.css'; // Assuming you have separate CSS for the cursor
 
